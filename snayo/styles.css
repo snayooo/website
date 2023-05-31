@@ -1,0 +1,48 @@
+:root {
+    --primary: #B659FF;
+    --text: #FFFFFF;
+    --bg: #2E2E2E;
+    --font-main: 'Inter';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100;
+}
+
+body {
+    color: var(--color);
+    background: var(--bg);
+    font-family: var(--font-main);
+}
+
+.nav {
+    margin-left: 50vw; 
+    border: none;
+    height: 100px;
+    background: transparent;
+    position: absolute;
+}
+
+.nav img {
+    height: 5em;
+    width: 5em;
+    border: 3px solid var(--text);
+    border-radius: 100%;
+}
+
+.welcome {
+    height: 100vh;
+    background-image: url(img/background.jpeg);
+    background-repeat: none;
+    background-size: cover;
+}
+
+.welcome h1 {
+    font-family: 'sans-serif';
+}

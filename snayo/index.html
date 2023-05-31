@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="EN_en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Snayo Website</title>
+        <link href="styles.css" rel="stylesheet">
+        <script>
+            function redirectDev() {
+                window.location.href("")
+            }
+
+            function redirectMusic() {
+                window.location.href("")
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="home">
+            <nav class="nav">
+                <img src="img/logo.png">
+            </nav>
+            <div class="welcome">
+                <h3>Hey, I am</h3>
+                <h1>Snayo</h1>
+                <p>and I am a developer and musician</p>
+            </div>
+            <main class="about">
+                <h2>Read something about me...:</h2>
+                <button onclick="redirectDev()">...as developer</button>
+                <button onclick="redirectMusic()">...as musician</button>
+            </main>
+            <div class="contact">
+                <h2>Leave me a message before you go!</h2>
+                <div class="form">
+                    <form>
+                        <input type="text" id="name" placeholder="Your name*" required>
+                        <input type="email" id="email" placeholder="Your Email*" required>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                        <textarea id="message" placeholder="Message" required></textarea>
+                        <button id="button">Send</button>
+                    </form>
+                    <script src="https://smtpjs.com/v3/smtp.js"></script>
+                    <script>
+                        var btn = document.getElementById("button")
+
+                        var name = document.getElementById("name").value
+                        var email = document.getElementById("email").value
+                        var subject = document.getElementById("subject").value
+                        var message = document.getElementById("message").value
+
+                        var mail = "Name : " + name + "<br>"
+                                 + "Email : " + email + "<br>"
+                                 + "Subject : " + subject + "<br>"
+                                 + "Message : " + message
+
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault()
+                            Email.send({
+                                SecureToken : '1f40dbc3-0a82-4771-9f92-b0c77d31e6a4a',
+                                To : 'contactform@snayo.tk',
+                                From : "as.23324.mo@gmail.com",
+                                Subject : "Main website contact form",
+                                Body : mail
+                            }).then(
+                            message => alert(message)
+                            );
+                        })
+
+                    </script>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="links">
+                    <p><a href="">Imprint</a> | <a href="">Privacy Policy</a> | <a href="">Social Media</a></p>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © - 2023 Snayo</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
